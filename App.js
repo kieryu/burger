@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import MainNavigation from './components/MainNavigation'
+import MainLayout from './components/MainLayout'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+
+      <Text style={styles.sectionTitle}>YUMMY BURGER</Text>
+
+      <ScrollView style={styles.scrollView}>
+        <MainLayout />
+      </ScrollView>
+
+      <MainNavigation />
+
     </View>
   );
 }
@@ -13,8 +22,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#EEE',
+    paddingVertical: 30,
   },
+  scrollView: {
+    paddingHorizontal: 20,
+    marginBottom: 22,
+  },
+  sectionTitle: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#EE841C',
+    marginVertical: 10,
+  }
 });
